@@ -55,8 +55,6 @@ void process_1(int X1, int Y1)
     }
 }
 
-
-
 void process_2(int X1, int Y1)
 {
     void gotoxy(int x, int y);
@@ -98,10 +96,10 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, ' ');
-        enterIndex(matrix1, R1, C1);
-        print_DOUBLE(matrix1, R1, C1);
-        symmetric_DOUBLE(matrix1, R1, C1) ? printf("\n\nThe matrix is symmetric\n")
-                                          : printf("\n\nThe matrix is not symmetric\n");
+        enterMatrix(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
+        is_symmetric(matrix1, R1, C1) ? printf("\n\nThe matrix is symmetric\n")
+                                      : printf("\n\nThe matrix is not symmetric\n");
         QuitReturn(X1, Y1);
         break;
     }
@@ -109,12 +107,12 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, ' ');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nInput matrix:\n");
-        print_DOUBLE(matrix1, R1, C1);
-        transpose_DOUBLE(matrix1, R1, C1, temp);
+        outputMatrix(matrix1, R1, C1);
+        transpose(matrix1, R1, C1, temp);
         printf("\nTranspose matrix:\n");
-        print_DOUBLE(temp, C1, R1);
+        outputMatrix(temp, C1, R1);
 
         QuitReturn(X1, Y1);
         break;
@@ -123,10 +121,10 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, ' ');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nInput matrix:\n");
-        print_DOUBLE(matrix1, R1, C1);
-        printf("\nDeterminant of this matrix is:  %lf \n", det_DOUBLE(matrix1, R1, C1));
+        outputMatrix(matrix1, R1, C1);
+        printf("\nDeterminant of this matrix is:  %lf \n", determinant(matrix1, R1, C1));
 
         QuitReturn(X1, Y1);
         break;
@@ -140,24 +138,24 @@ void process_2(int X1, int Y1)
         scanf("%c", &choice);
         printf("\n");
         enterRC(matrix1, &R1, &C1, '1');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nMatrix 1\n");
-        print_DOUBLE(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
 
         enterRC(matrix2, &R2, &C2, '2');
-        enterIndex(matrix2, R2, C2);
+        enterMatrix(matrix2, R2, C2);
         printf("\nMatrix 2\n");
-        print_DOUBLE(matrix2, R2, C2);
+        outputMatrix(matrix2, R2, C2);
 
         switch (choice)
         {
         case '1':
         {
-            if (product_DOUBLE(matrix1, matrix2, R1, C1, R2, C2, matrix3))
+            if (matrix_multiply(matrix1, matrix2, R1, C1, R2, C2, matrix3))
             {
                 printf("\n\nThe matrices can be multiplied\n");
                 printf("\nProduct matrix: \n");
-                print_DOUBLE(matrix3, R2, C2);
+                outputMatrix(matrix3, R2, C2);
             }
             else
                 printf("\n\nThe matrices can not be multiplied\n");
@@ -165,11 +163,11 @@ void process_2(int X1, int Y1)
         }
         case '2':
         {
-            if (addition_DOUBLE(matrix1, matrix2, R1, C1, R2, C2, matrix3))
+            if (addition(matrix1, matrix2, R1, C1, R2, C2, matrix3))
             {
                 printf("\n\nThe matrices can be added\n");
                 printf("\nSum matrix: \n");
-                print_DOUBLE(matrix3, R2, C2);
+                outputMatrix(matrix3, R2, C2);
             }
             else
                 printf("\n\nThe matrices can not be added\n");
@@ -177,11 +175,11 @@ void process_2(int X1, int Y1)
         }
         case '3':
         {
-            if (subtraction_DOUBLE(matrix1, matrix2, R1, C1, R2, C2, matrix3))
+            if (subtraction(matrix1, matrix2, R1, C1, R2, C2, matrix3))
             {
                 printf("\n\nThe matrices can be subtracted\n");
                 printf("\nDifference matrix: \n");
-                print_DOUBLE(matrix3, R2, C2);
+                outputMatrix(matrix3, R2, C2);
             }
             else
                 printf("\n\nThe matrices can not be subtracted\n");
@@ -197,16 +195,16 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, '1');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nMatrix 1\n");
-        print_DOUBLE(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
 
         enterRC(matrix2, &R2, &C2, '2');
-        enterIndex(matrix2, R2, C2);
+        enterMatrix(matrix2, R2, C2);
         printf("\nMatrix 2\n");
-        print_DOUBLE(matrix2, R2, C2);
+        outputMatrix(matrix2, R2, C2);
 
-        thesame_DOUBLE(matrix1, matrix2, R1, C1, R2, C2) ? printf("\n\nTwo matrices are identical\n")
+        is_thesame(matrix1, matrix2, R1, C1, R2, C2) ? printf("\n\nTwo matrices are identical\n")
                                                          : printf("\n\nTwo matrices are different\n");
 
         QuitReturn(X1, Y1);
@@ -216,16 +214,16 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, '1');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nMatrix 1\n");
-        print_DOUBLE(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
 
         enterRC(matrix2, &R2, &C2, '2');
-        enterIndex(matrix2, R2, C2);
+        enterMatrix(matrix2, R2, C2);
         printf("\nMatrix 2\n");
-        print_DOUBLE(matrix2, R2, C2);
+        outputMatrix(matrix2, R2, C2);
 
-        switch (contain_DOUBLE(matrix1, matrix2, R1, C1, R2, C2))
+        switch (is_contain(matrix1, matrix2, R1, C1, R2, C2))
         {
         case 1:
             printf("\n\nMatrix 1 contains matrix 2\n");
@@ -246,16 +244,16 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, '1');
-        enterIndex(matrix1, R1, C1);
+        enterMatrix(matrix1, R1, C1);
         printf("\nMatrix 1\n");
-        print_DOUBLE(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
 
         enterRC(matrix2, &R2, &C2, '2');
-        enterIndex(matrix2, R2, C2);
+        enterMatrix(matrix2, R2, C2);
         printf("\nMatrix 2\n");
-        print_DOUBLE(matrix2, R2, C2);
+        outputMatrix(matrix2, R2, C2);
 
-        relationFactor_DOUBLE(matrix1, matrix2, R1, C1, R2, C2);
+        relationFactor(matrix1, matrix2, R1, C1, R2, C2);
         QuitReturn(X1, Y1);
         break;
     }
@@ -263,9 +261,9 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, ' ');
-        enterIndex(matrix1, R1, C1);
-        print_DOUBLE(matrix1, R1, C1);
-        printf("\n\nMax of this matrix is %lf\n", MaxOfMatrix_DOUBLE(matrix1, R1, C1));
+        enterMatrix(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
+        printf("\n\nMax of this matrix is %lf\n", MaxOfMatrix(matrix1, R1, C1));
 
         QuitReturn(X1, Y1);
         break;
@@ -274,27 +272,25 @@ void process_2(int X1, int Y1)
     {
         note1();
         enterRC(matrix1, &R1, &C1, ' ');
-        enterIndex(matrix1, R1, C1);
-        print_DOUBLE(matrix1, R1, C1);
-        printf("\n\nMin of this matrix is %lf\n", MinOfMatrix_DOUBLE(matrix1, R1, C1));
+        enterMatrix(matrix1, R1, C1);
+        outputMatrix(matrix1, R1, C1);
+        printf("\n\nMin of this matrix is %lf\n", MinOfMatrix(matrix1, R1, C1));
 
         QuitReturn(X1, Y1);
         break;
     }
     case '0':
-        process_2(X1, Y1);
+        process_1(X1, Y1);
         break;
     case 'Q':
     case 'q':
         QuitReturn(X1, Y1);
         break;
     default:
-        process_3_DOUBLE(X1, Y1);
+        process_2(X1, Y1);
         break;
     }
 }
-
-
 
 void QuitReturn(int X1, int Y1)
 {
@@ -303,7 +299,7 @@ void QuitReturn(int X1, int Y1)
     fflush(stdin);
     scanf("%c", &goback);
     if (goback == 'R' || goback == 'r')
-        process_2(X1, Y1);
+        process_1(X1, Y1);
     else
     {
         system("cls");

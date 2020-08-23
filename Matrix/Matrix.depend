@@ -1,0 +1,72 @@
+# depslib dependency file v1.0
+1598181441 source:d:\github\matrixcalculator\about.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"A2Matrix.h"
+
+1598182948 d:\github\matrixcalculator\a2matrix.h
+	"A2Matrix.h"
+
+1598118008 source:d:\github\matrixcalculator\addsubproduct.c
+	<stdio.h>
+
+1598182582 source:d:\github\matrixcalculator\contain.c
+	"A2Matrix.h"
+
+1598181441 source:d:\github\matrixcalculator\delrc_to_make_cofactor.c
+	<stdio.h>
+	"A2Matrix.h"
+
+1598181441 source:d:\github\matrixcalculator\det.c
+	<math.h>
+	"A2Matrix.h"
+
+1598118158 source:d:\github\matrixcalculator\equal.c
+	<math.h>
+	"A2Matrix.h"
+
+1598110854 source:d:\github\matrixcalculator\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"A2Matrix.h"
+
+1598115133 source:d:\github\matrixcalculator\matrixio.c
+	<stdio.h>
+	"A2Matrix.h"
+
+1598117677 source:d:\github\matrixcalculator\minmax.c
+	"A2Matrix.h"
+
+1598182121 source:d:\github\matrixcalculator\relationfactor.c
+	"A2Matrix.h"
+
+1598117658 source:d:\github\matrixcalculator\symmetry,skew-symmetry.c
+	<stdio.h>
+	"A2Matrix.h"
+
+1598115073 source:d:\github\matrixcalculator\thesame.c
+	"A2Matrix.h"
+
+1598114996 source:d:\github\matrixcalculator\transpose.c
+	<stdio.h>
+	<stdlib.h>
+	"A2Matrix.h"
+
+1598181441 source:d:\github\matrixcalculator\userguide.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"A2Matrix.h"
+
+1598181441 source:d:\github\matrixcalculator\welcome.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"A2Matrix.h"
+
