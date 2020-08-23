@@ -19,7 +19,7 @@ void about(void)
     printf("Contact details:\n");
     printf("----------------\n");
     printf("Email: binh.tran.99@hcmut.edu.vn\n");
-    printf("Phone: 0979 528 010\n\n\n\n");
+    printf("Phone: 0979 528 010\n");
     printf("Ho Chi Minh city University of Technology, VNU-HCM\n\n\n\n");
     printf("Press any key to return...");
     getch();

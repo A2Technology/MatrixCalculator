@@ -70,3 +70,11 @@
 	<conio.h>
 	"A2Matrix.h"
 
+1598183370 source:d:\github\matrixcalculator\control.c
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"A2Matrix.h"
+
