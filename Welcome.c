@@ -23,7 +23,7 @@ void main_logo(int X1, int Y1)
     gotoxy(X1, Y1 + 7);
     printf("##     ## ##     ##    ##    ##     ## #### ##     ## ");
     gotoxy(X1, Y1 + 8);
-    printf("A project from Master C");
+    printf("A project from A2");
     gotoxy(X1, Y1 + 10);
     printf("Press any key to begin. ");
     getch();

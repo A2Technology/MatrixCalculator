@@ -1,33 +1,33 @@
 #include "A2Matrix.h"
 
-int relationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
+int relationFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
 {
     //return 1, 2, 3, 4 means + , - , * , /
     //return 0 means no relation
-    double additionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
-    double subtractionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
-    double multiplicationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
-    double divisionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
+    double additionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
+    double subtractionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
+    double multiplicationFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
+    double divisionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2);
 
     double add = 0, sub = 0, mul = 0, div = 0;
 
     if (R1 != R2 || C1 != C2)
+
     {
         printf("\n\nError code 100111\nDimension Error!!!\nNot the same size");
         return 100111;
     }
-
-    add = additionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-    sub = subtractionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-    mul = multiplicationFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-    div = divisionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
+    add = additionFactor(m1, m2, R1, C1, R2, C2);
+    sub = subtractionFactor(m1, m2, R1, C1, R2, C2);
+    mul = multiplicationFactor(m1, m2, R1, C1, R2, C2);
+    div = divisionFactor(m1, m2, R1, C1, R2, C2);
 
     if (add != 0 || sub != 0 || mul != 0 || div != 0)
     {
-        add = additionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-        sub = subtractionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-        mul = multiplicationFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
-        div = divisionFactor_DOUBLE(m1, m2, R1, C1, R2, C2);
+        add = additionFactor(m1, m2, R1, C1, R2, C2);
+        sub = subtractionFactor(m1, m2, R1, C1, R2, C2);
+        mul = multiplicationFactor(m1, m2, R1, C1, R2, C2);
+        div = divisionFactor(m1, m2, R1, C1, R2, C2);
         printf("\nMatrix 2 is produced from matrix 1 by these operation:\n\n");
         if (add)
             printf("Added by      \t%10.10f\n", add);
@@ -39,10 +39,10 @@ int relationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, 
             printf("Divided by    \t%10.10f\n", div);
 
         printf("\n\nOr\n\n");
-        add = additionFactor_DOUBLE(m2, m1, R1, C1, R2, C2);
-        sub = subtractionFactor_DOUBLE(m2, m1, R1, C1, R2, C2);
-        mul = multiplicationFactor_DOUBLE(m2, m1, R1, C1, R2, C2);
-        div = divisionFactor_DOUBLE(m2, m1, R1, C1, R2, C2);
+        add = additionFactor(m2, m1, R1, C1, R2, C2);
+        sub = subtractionFactor(m2, m1, R1, C1, R2, C2);
+        mul = multiplicationFactor(m2, m1, R1, C1, R2, C2);
+        div = divisionFactor(m2, m1, R1, C1, R2, C2);
         printf("\nMatrix 1 is produced from matrix 2 by these operation:\n\n");
         if (add)
             printf("Added by      \t%10.10f\n", add);
@@ -61,7 +61,7 @@ int relationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, 
     }
 }
 
-double additionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
+double additionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
 {
     int i, j, f;
 
@@ -80,7 +80,7 @@ double additionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C
     return f;
 }
 
-double subtractionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
+double subtractionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
 {
     int i, j;
     double f;
@@ -90,13 +90,13 @@ double subtractionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, in
     for (i = 1; i <= R1; i++)
         for (j = 1; j <= C1; j++)
         {
-            if (Neql((m1[i][j] - m2[i][j]), f))
+            if (!is_equal((m1[i][j] - m2[i][j]), f))
                 return 0;
         }
     return f;
 }
 
-double multiplicationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
+double multiplicationFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
 {
     int i, j;
     double f;
@@ -107,24 +107,24 @@ double multiplicationFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1,
     for (i = 1; i <= R1; i++)
         for (j = 1; j <= C1; j++)
         {
-            if (Neql((m2[i][j] / m1[i][j]), f) || eql(m1[i][j], 0) || eql(m2[i][j], 0))
+            if (!is_equal((m2[i][j] / m1[i][j]), f) || is_equal(m1[i][j], 0) || is_equal(m2[i][j], 0))
                 return 0;
         }
     return f;
 }
 
-double divisionFactor_DOUBLE(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
+double divisionFactor(double m1[30][30], double m2[30][30], int R1, int C1, int R2, int C2)
 {
     int i, j;
     double f;
 
     f = m1[1][1] / m2[1][1];
     if (f < 1 && f > -1)
-        return 0; //if f<1&&f>-1, move to function multiplicationFactor_DOUBLE
+        return 0; //if f<1 &&f >-1, move to function multiplicationFactor_DOUBLE
     for (i = 1; i <= R1; i++)
         for (j = 1; j <= C1; j++)
         {
-            if (Neql((m1[i][j] / m2[i][j]), f) || eql(m1[i][j], 0) || eql(m2[i][j], 0))
+            if (!is_equal((m1[i][j] / m2[i][j]), f) || is_equal(m1[i][j], 0) || is_equal(m2[i][j], 0))
                 return 0;
         }
     return f;

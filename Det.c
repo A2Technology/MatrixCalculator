@@ -2,15 +2,14 @@
 #include "A2Matrix.h"
 
 //determinant of m x m matrix
-double det_DOUBLE(double matrix[30][30], int R, int C)
+double determinant(double matrix[30][30], int R, int C)
 {
-    int delRCcoFactor_DOUBLE(double matrix[30][30], int R, int C, int dR, int dC, double temp[30][30]);
-    double det2_DOUBLE(double matrix[30][30], int R, int C);
+    int delRC_coFactor(double matrix[30][30], int R, int C, int dR, int dC, double temp[30][30]);
+    double determinant_2(double matrix[30][30], int R, int C);
 
     double det = 0;
     int i, j;
     double temp[30][30];
-
     if (R != C)
     {
         printf("Error code: 100111\nDimension Error!!!\nNot square matrix");
@@ -21,14 +20,14 @@ double det_DOUBLE(double matrix[30][30], int R, int C)
         if (R == 1)
             return matrix[1][1];
         else if (R == 2)
-            return det2_DOUBLE(matrix, R, C);
+            return determinant_2(matrix, R, C);
         else
         {
             for (j = 1; j <= C; j++)
             {
                 double temp[30][30];
-                delRCcoFactor_DOUBLE(matrix, R, C, 1, j, temp);
-                det += matrix[1][j] * (pow(-1, 1 + j)) * det_DOUBLE(temp, R - 1, C - 1);
+                delRC_coFactor(matrix, R, C, 1, j, temp);
+                det += matrix[1][j] * (pow(-1, 1 + j)) * determinant(temp, R - 1, C - 1);
             }
         }
     }
@@ -37,12 +36,11 @@ double det_DOUBLE(double matrix[30][30], int R, int C)
 }
 
 //determinant of a 2x2 matrix
-
-double det2_DOUBLE(double matrix[30][30], int R, int C)
+double determinant_2(double matrix[30][30], int R, int C)
 {
     if (R != C || R != 2 || C != 2)
     {
-        printf("\n\n det2_DOUBLE gets some higher order of matrix\n\n");
+        printf("\n\n determinant_2 gets some higher order of matrix\n\n");
         return 0;
     }
     else

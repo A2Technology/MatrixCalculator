@@ -50,31 +50,10 @@ void userguide(void)
     printf("\n\nError code:\n");
     printf("Dimension Error: 100111\n");
     printf("Math Error:      100222\n");
-
     getch();
 }
 
-void note1_CHAR(void)
-{
-    system("cls");
-    printf(">> NOTE <<\n\n");
-    printf("-------------------------\n");
-    printf("Input matrix index as characters.\n");
-    printf("The program processes data as integers, which are in ASCII standard\n");
-    printf("The output will be as characters. However, if the result is out of ASCII standard, it will be printed as integers\n");
-    printf("-------------------------\n\n\n");
-}
-
-void note1_INT(void)
-{
-    system("cls");
-    printf(">> NOTE <<\n\n");
-    printf("-------------------------\n");
-    printf("This function will calculate matrices in integer type only\n");
-    printf("-------------------------\n\n\n");
-}
-
-void note1_DOUBLE(void)
+void note1(void)
 {
     system("cls");
     printf(">> NOTE <<\n\n");
