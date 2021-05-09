@@ -1,2 +1,2 @@
 # MatrixCalculator
-This repository contains code for the project of a simple matrix calculator written in C.
+This repository contains code for the project of a simple matrix calculator written in C. This project is still updating....
