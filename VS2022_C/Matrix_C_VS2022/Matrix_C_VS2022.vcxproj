@@ -104,6 +104,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>D:\GitHub\MatrixCalculator\VS2022_C\Matrix_C_VS2022\src;D:\GitHub\MatrixCalculator\VS2022_C\Matrix_C_VS2022\hdr;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>D:\GitHub\MatrixCalculator\VS2022_C\Matrix_C_VS2022\hdr;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +130,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Matrix_C_VS2022.cpp" />
+    <ClCompile Include="src\About.c" />
+    <ClCompile Include="src\AddSubProduct.c" />
+    <ClCompile Include="src\Contain.c" />
+    <ClCompile Include="src\Control.c" />
+    <ClCompile Include="src\DelRCcoFactor.c" />
+    <ClCompile Include="src\Det.c" />
+    <ClCompile Include="src\Equal.c" />
+    <ClCompile Include="src\Main.c" />
+    <ClCompile Include="src\MatrixIO.c" />
+    <ClCompile Include="src\Matrix_C_VS2022.c" />
+    <ClCompile Include="src\MinMax.c" />
+    <ClCompile Include="src\RelationFactor.c" />
+    <ClCompile Include="src\Symmetry.c" />
+    <ClCompile Include="src\Thesame.c" />
+    <ClCompile Include="src\Transpose.c" />
+    <ClCompile Include="src\UserGuide.c" />
+    <ClCompile Include="src\Welcome.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hdr\A2Matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
