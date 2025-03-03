@@ -1,20 +1,19 @@
-// Matrix_C_VS2022.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <stdio.h>
+#include <stdlib.h>
+#include<windows.h>
+#include<conio.h>
+#include "A2Matrix.h"
 
-#include <iostream>
+const int X1 = 10;
+const int Y1 = 10;
+void gotoxy(int x, int y);
+void process_1(int X1, int Y1);
+void process_2(int X1, int Y1);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    main_logo(X1, Y1);
+    process_1(X1, Y1);
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

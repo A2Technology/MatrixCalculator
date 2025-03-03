@@ -36,9 +36,6 @@
     <ClCompile Include="src\Equal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Matrix_C_VS2022.c">
       <Filter>Source Files</Filter>
     </ClCompile>

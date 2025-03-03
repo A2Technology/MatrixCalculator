@@ -137,7 +137,6 @@
     <ClCompile Include="src\DelRCcoFactor.c" />
     <ClCompile Include="src\Det.c" />
     <ClCompile Include="src\Equal.c" />
-    <ClCompile Include="src\Main.c" />
     <ClCompile Include="src\MatrixIO.c" />
     <ClCompile Include="src\Matrix_C_VS2022.c" />
     <ClCompile Include="src\MinMax.c" />
