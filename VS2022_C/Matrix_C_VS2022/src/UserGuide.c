@@ -54,7 +54,7 @@ void userguide(void)
     printf("Dimension Error: 100111\n");
     printf("Math Error:      100222\n");
 
-    getch();
+    _getch();
 }
 
 void note1_CHAR(void)

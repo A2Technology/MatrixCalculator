@@ -670,7 +670,7 @@ void QuitReturn(int X1, int Y1)
     else {
             system("cls");
             gotoxy(X1,Y1+7); printf("!!!Good Bye!!!\n\n\n\n\n\n\n");
-            getch();
+            _getch();
             system("cls");
             return;
          }

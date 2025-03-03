@@ -28,5 +28,5 @@ void about(void)
     printf("Email: binh.tran.99@hcmut.edu.vn\n");
     printf("Phone: 0979 528 010\n\n\n\n");
     printf("Press any key to return...");
-    getch();
+    _getch();
 }
