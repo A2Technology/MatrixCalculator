@@ -24,7 +24,7 @@ void process_1(int X1, int Y1)
     gotoxy(X1,Y1+4); printf("3. About this Project");
 
     gotoxy(X1,Y1+6); printf("0. Return to main page");
-    gotoxy(X1,Y1+8); printf("_");scanf("%c",&select);
+    gotoxy(X1,Y1+8); printf("_");scanf_s("%c",&select);
     switch(select)
     {
         case '1': process_2(X1,Y1); break;
@@ -48,7 +48,7 @@ void process_2(int X1, int Y1)
 
     gotoxy(X1,Y1+6); printf("0. Back");
     gotoxy(X1,Y1+7); printf("Q. QuitReturn");
-    gotoxy(X1,Y1+8); printf("_");scanf("%c",&select);
+    gotoxy(X1,Y1+8); printf("_");scanf_s("%c",&select);
     switch(select)
     {
         case '1': process_3_INT(X1,Y1); break;
@@ -81,7 +81,7 @@ void process_3_INT(int X1, int Y1)
 
     gotoxy(X1,Y1+12); printf("0. Back");
     gotoxy(X1,Y1+13); printf("Q. Quit");
-    gotoxy(X1,Y1+14); printf("_");scanf("%c",&select);
+    gotoxy(X1,Y1+14); printf("_");scanf_s("%c",&select);
     switch(select)
     {
         case '1': {
@@ -123,7 +123,7 @@ void process_3_INT(int X1, int Y1)
                     char choice;
                     fflush(stdin);
                     printf("\nSelect calculation:\n1. Multiplication \n2. Addition\n3. Subtraction\n__");
-                    scanf("%c",&choice);
+                    scanf_s("%c",&choice);
                     printf("\n");
                     enterRC(matrix1,&R1,&C1,'1');
                     enterIndex_INT(matrix1,R1,C1);
@@ -277,7 +277,7 @@ void process_3_DOUBLE(int X1, int Y1)
 
     gotoxy(X1,Y1+12); printf("0. Back");
     gotoxy(X1,Y1+13); printf("Q. Quit");
-    gotoxy(X1,Y1+14); printf("_");scanf("%c",&select);
+    gotoxy(X1,Y1+14); printf("_");scanf_s("%c",&select);
     switch(select)
     {
         case '1': {
@@ -319,7 +319,7 @@ void process_3_DOUBLE(int X1, int Y1)
                     char choice;
                     fflush(stdin);
                     printf("\nSelect calculation:\n1. Multiplication \n2. Addition\n3. Subtraction\n__");
-                    scanf("%c",&choice);
+                    scanf_s("%c",&choice);
                     printf("\n");
                     enterRC(matrix1,&R1,&C1,'1');
                     enterIndex_DOUBLE(matrix1,R1,C1);
@@ -474,7 +474,7 @@ void process_3_CHAR(int X1, int Y1)
 
     gotoxy(X1,Y1+12); printf("0. Back");
     gotoxy(X1,Y1+13); printf("Q. Quit");
-    gotoxy(X1,Y1+14); printf("_");scanf("%c",&select);
+    gotoxy(X1,Y1+14); printf("_");scanf_s("%c",&select);
     switch(select)
     {
         case '1': {
@@ -517,7 +517,7 @@ void process_3_CHAR(int X1, int Y1)
                     char choice;
                     fflush(stdin);
                     printf("\nSelect calculation:\n1. Multiplication \n2. Addition\n3. Subtraction\n__");
-                    scanf("%c",&choice);
+                    scanf_s("%c",&choice);
                     printf("\n");
                     enterRC(matrix1,&R1,&C1,'1');
                     enterIndex_CHAR(matrix1,R1,C1);
@@ -665,7 +665,7 @@ void QuitReturn(int X1, int Y1)
     printf("\nPress Enter to quit or press R to return _");
     char goback;
     fflush(stdin);
-    scanf("%c",&goback);
+    scanf_s("%c",&goback);
     if (goback=='R'||goback=='r') process_2(X1,Y1);
     else {
             system("cls");

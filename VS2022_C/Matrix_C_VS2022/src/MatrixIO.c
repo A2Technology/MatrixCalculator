@@ -18,7 +18,7 @@ void enterIndex_INT(int matrix[30][30],int R, int C)
         for (j=1;j<=C;j++)
         {
             printf("Enter a[%d][%d]:  ",i,j);
-            scanf("%d",&matrix[i][j]);
+            scanf_s("%d",&matrix[i][j]);
         }
         printf("\n");
     }
@@ -33,9 +33,9 @@ void enterRC(int matrix[30][30],int *R, int *C, char Order)
     do {
         r=0,c=0;
         printf("Enter row of matrix %c: ",Order);
-        scanf("%d",&r);
+        scanf_s("%d",&r);
         printf("Enter column of matrix %c: ",Order);
-        scanf("%d",&c);
+        scanf_s("%d",&c);
         *R=r;
         *C=c;
         if(r<=0||c<=0) printf("\n\nError code: 100222\nMath Error!!!\nNumber of row and column must be positive integers\n\n");
@@ -91,7 +91,7 @@ void enterIndex_DOUBLE(double matrix[30][30],int R, int C)
         for (j=1;j<=C;j++)
         {
             printf("Enter a[%d][%d]:  ",i,j);
-            scanf("%lf",&matrix[i][j]);
+            scanf_s("%lf",&matrix[i][j]);
         }
         printf("\n");
     }
@@ -113,7 +113,7 @@ void enterIndex_CHAR(int matrix[30][30],int R, int C)
         for (j=1;j<=C;j++)
         {
             printf("Enter a[%d][%d]:  ",i,j);
-            scanf("%c",&matrix[i][j]);
+            scanf_s("%c",&matrix[i][j]);
             fflush(stdin);
         }
         printf("\n");
